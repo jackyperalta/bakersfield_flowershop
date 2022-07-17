@@ -1,0 +1,2 @@
+DROP VIEW IF EXISTS employee_VIEWS;
+

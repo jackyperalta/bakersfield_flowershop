@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>New Order</title>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
+                <ul class="nav navbar-nav">
+                    <li><a href="dashboard"><i class="menu-icon ti-dashboard"></i>Dashboard</a></li>
+                    <li class="active"><a href="new-order"><i class="menu-icon ti-receipt" aria-hidden="true"></i>New Order</a></li>
+                    <li><a href="packages"> <i class="menu-icon ti-package"></i>Packages</a></li>
+                    <li><a href="products"> <i class="menu-icon ti-shopping-cart"></i>Products</a></li>
+                    <li><a href="supply-order"> <i class="menu-icon ti-file"></i>Supply Orders</a></li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-bar-chart"></i>Report</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="ti-bar-chart"></i><a href="inventory">Inventory</a></li>
+                            <li><i class="ti-bar-chart"></i><a href="sales">Sales</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </aside><!-- End of left-panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="/images/logo.png" alt="Logo"> Bakersfield Flower Shop
+                    </a>
+                </div>
+            </div>
+        </header><!-- End of header -->
+
+        <!-- Breadcrumbs-->
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li class="active">New Order</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of breadcrumbs-->
+
+        <!-- Content -->
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header"><strong>Order</strong><small> Form</small></div>
+                            <div class="card-body card-block">
+                                <div class="form-group"><label for="customer" class=" form-control-label">Customer</label><input type="text" id="customer" placeholder="Enter customer name" class="form-control"></div>
+                                <div class="form-group"><label for="email" class=" form-control-label">Customer Email</label><input type="text" id="email" placeholder="Enter email" class="form-control"></div>
+                                <div class="form-group"><label for="phone-number" class=" form-control-label">Customer Phone Number</label><input type="text" id="phone-number" placeholder="Enter phone number" class="form-control"></div>
+                                <div class="form-group"><label for="product-id" class=" form-control-label">Product ID</label><input type="text" id="product-id" placeholder="Enter ID" class="form-control"></div>
+                                <div class="form-group"><label for="quantity" class=" form-control-label">Quantity</label><input type="text" id="quantity" placeholder="Enter Quantity" class="form-control"></div>
+                                <div class="form-group"><label for="message" class=" form-control-label">Message</label><input type="text" id="message" placeholder="Message" class="form-control"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header"><strong>Recipient</strong><small> Info</small></div>
+                            <div class="card-body card-block">
+                                <div class="form-group"><label for="recipient" class=" form-control-label">Recipient Name</label><input type="text" id="recipient" placeholder="Enter recipient name" class="form-control"></div>
+                                <div class="form-group"><label for="r-number" class=" form-control-label">Recipient Phone Number</label><input type="text" id="recipient-phone" placeholder="Enter recipient phone #" class="form-control"></div>
+                                <div class="form-group"><label for="street" class="form-control-label">Recipient Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+                                <div class="form-group"><label for="city" class=" form-control-label">Recipient City</label><input type="text" id="city" placeholder="Enter city" class="form-control"></div>
+                                <div class="form-group"><label for="postal-code" class=" form-control-label">Recipient Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                                <div class="form-group"><label for="state" class=" form-control-label">Recipient State</label><input type="text" id="state" placeholder="Enter state" class="form-control"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Debit/Credit Card</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">Payment</h3>
+                                        </div>
+                                        <hr>
+                                        <form action="/post-new-order" method="post" novalidate="novalidate">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Payment amount</label>
+                                                <input id="cc-payment" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false"> <!--value="100.00"-->
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Name on card</label>
+                                                <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Card number</label>
+                                                <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1">Expiration</label>
+                                                        <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY">
+                                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label for="x_card_code" class="control-label mb-1">Security code</label>
+                                                    <div class="input-group">
+                                                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
+                                                        <div class="input-group-addon">
+                                                            <span class="ti-help-alt" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code"
+                                                            data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
+                                                            data-trigger="hover"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="ti-lock"></i>&nbsp;
+                                                    <span id="payment-button-amount">Complete Order</span>
+                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of Content -->
+
+        <div class="clearfix"></div>
+
+    </div><!-- End of right-panel -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
+

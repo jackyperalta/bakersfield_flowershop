@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Supply Orders</title>
+</head>
+<style>
+    #status_button:hover {
+        pointer-events: none;
+    }
+</style>
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
+                <ul class="nav navbar-nav">
+                    <li><a href="dashboard"><i class="menu-icon ti-dashboard"></i>Dashboard</a></li>
+                    <li><a href="new-order"><i class="menu-icon ti-receipt" aria-hidden="true"></i>New Order</a></li>
+                    <li><a href="packages"> <i class="menu-icon ti-package"></i>Packages</a></li>
+                    <li><a href="products"> <i class="menu-icon ti-shopping-cart"></i>Products</a></li>
+                    <li class="active"><a href="supply-order"> <i class="menu-icon ti-file"></i>Supply Orders</a></li>
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-bar-chart"></i>Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="ti-bar-chart"></i><a href="inventory">Inventory</a></li>
+                            <li><i class="ti-bar-chart"></i><a href="sales">Sales</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </aside><!-- End of left-panel -->
+
+    <!-- Right Panel -->
+    <div id="right-panel" class="right-panel">
+        <header id="header" class="header"> <!-- Header-->
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="Logo"> Bakersfield Flower Shop
+                    </a>
+                </div>
+            </div>
+        </header><!-- End of header -->
+
+        <!-- Breadcrumbs-->
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li class="active">Supply Orders</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of breadcrumbs-->
+
+        <!-- Content -->
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">My Supply Orders</strong>
+                        </div>
+                        <div class="table-stats order-table ov-h">
+                            <table id="supply" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Purchase ID</th>
+                                        <th>Purchase Date</th>
+                                        <th>Vendor</th>
+                                        <th>Action</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header"><strong>Supply</strong><small> Order</small></div>
+                        <div class="card-body card-block">
+                            <div class="form-group"><label for="product name" class=" form-control-label">Product Name</label><input type="text" id="recipient" placeholder="Enter Product Name" class="form-control"></div>
+                            <div class="form-group"><label for="product name" class=" form-control-label">Quantity</label><input type="text" id="recipient" placeholder="Quantity" class="form-control"></div>
+                            <div class="form-group"><label for="phone number" class=" form-control-label">Company Phone Number</label><input type="text" id="recipient-phone" placeholder="Enter company phone #" class="form-control"></div>
+                            <div class="form-group"><label for="street" class="form-control-label">Company Street</label><input type="text" id="street" placeholder="Enter street name" class="form-control"></div>
+                            <div class="form-group"><label for="city" class=" form-control-label">Company City</label><input type="text" id="city" placeholder="Enter city" class="form-control"></div>
+                            <div class="form-group"><label for="postal-code" class=" form-control-label">Company Postal Code</label><input type="text" id="postal-code" placeholder="Postal Code" class="form-control"></div>
+                            <div class="form-group"><label for="state" class=" form-control-label">Company State</label><input type="text" id="state" placeholder="Enter state" class="form-control"></div>
+                            <div class="form-group"><label for="state" class=" form-control-label">Vendor Name</label><input type="text" id="state" placeholder="Enter state" class="form-control"></div>
+                            <form action="#" method="post" novalidate="novalidate">
+                                <div class="form-group">
+                                    <label for="cc-payment" class="control-label mb-1">Payment amount</label>
+                                    <input id="cc-payment" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false"> <!--value="100.00"-->
+                                </div>
+                                <div class="form-group has-success">
+                                    <label for="cc-name" class="control-label mb-1">Company card</label>
+                                    <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Enter name on company card" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name">
+                                    <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cc-number" class="control-label mb-1">Card number</label>
+                                    <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" value="" data-val="true" data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number">
+                                    <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="cc-exp" class="control-label mb-1">Expiration</label>
+                                            <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration" data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY">
+                                            <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="x_card_code" class="control-label mb-1">Security code</label>
+                                        <div class="input-group">
+                                            <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
+                                            <div class="input-group-addon">
+                                                <span class="ti-help-alt" data-toggle="popover" data-container="body" data-html="true" data-title="Security Code"
+                                                data-content="<div class='text-center one-card'>The 3 digit code on back of the card..<div class='visa-mc-cvc-preview'></div></div>"
+                                                data-trigger="hover"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                        <i class="ti-lock"></i>&nbsp;
+                                        <span id="payment-button-amount">Complete Order</span>
+                                        <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div><!-- End of right-panel -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="/js/main.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                type : "GET",
+                url : "/getSupplyOrder",
+                dataType: "json",
+                success: function(data){
+                    $.each(data, function(key, val){
+                        var reportRow = '<tr>' +
+                            '<td>' + val.supply_purchase_id + '</td>' +
+                            '<td>' + val.time_of_supply_purchase + '</td>' +
+                            '<td>' + val.vendor_name + '</td>' +
+                            '<td><button id="status_button" type="button" class="btn btn-outline-success">Completed</button></td>' +
+                            '</tr>';
+                            $('#supply tbody').append(reportRow);
+                        });
+                },
+                    error : function(e) {
+                        alert("ERROR: ", e);
+                    }
+                });
+            })
+    </script>
+</body>
+</html>

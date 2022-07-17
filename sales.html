@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Reports</title>
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
+                <ul class="nav navbar-nav">
+                    <li><a href="dashboard"><i class="menu-icon ti-dashboard"></i>Dashboard</a></li>
+                    <li><a href="new-order"><i class="menu-icon ti-receipt" aria-hidden="true"></i>New Order</a></li>
+                    <li><a href="packages"> <i class="menu-icon ti-package"></i>Packages</a></li>
+                    <li><a href="products"> <i class="menu-icon ti-shopping-cart"></i>Products</a></li>
+                    <li><a href="supply-order"> <i class="menu-icon ti-file"></i>Supply Orders</a></li>
+
+                    <li class="menu-item-has-children active dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon ti-bar-chart"></i>Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="ti-bar-chart"></i><a href="inventory">Inventory</a></li>
+                            <li><i class="ti-bar-chart"></i><a href="sales">Sales</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </aside> <!-- End of left-panel -->
+
+    <div id="right-panel" class="right-panel"> <!-- Right Panel -->
+        <header id="header" class="header"> <!-- Header-->
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="Logo"> Bakersfield Flower Shop
+                    </a>
+                </div>
+            </div>
+        </header> <!-- End of header -->
+
+        <div class="breadcrumbs"> <!-- Breadcrumbs-->
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#"> Dashboard </a></li>
+                                    <li><a href="#"> Report </a></li>
+                                    <li class="active"> Sales </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End of breadcrumbs-->
+
+        <div class="content"> <!-- Content -->
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Sales by Product</strong>
+                                <button type="button" class="btn btn-success" style="float:right" id="cmd">Download PDF</button>
+                                <div class="row form-group">
+                                    <div class="col col-sm-6"><input type="text" placeholder="Start Date" class="form-control"></div>
+                                    <div class="col col-sm-6"><input type="text" placeholder="End Date" class="form-control"></div>
+                                </div>
+
+                            </div>
+                            <div id="pdf" class="card-body">
+                                <table id="reportTable" class="table table-striped">
+                                    <img src="images/salesByProduct.png"  width="800" height="100">
+                                    <p class="text-center">Date/Time: <span id="datetime"></span></p>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Item Name </th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Unit Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End of Content -->
+        <div class="clearfix"></div>
+    </div> <!-- End of right-panel -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script> -->
+    <script src="../public/js/main.js"></script>
+
+    <!-- PDF -->
+    <script language="javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script language="javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                type : "GET",
+                url : "/getreport2",
+                dataType: "json",
+                success: function(data){
+                    $.each(data, function(key, val){
+                        var reportRow = '<tr>' +
+                            '<td>' + val.product_name + '</td>' +
+                            '<td>' + val.quantity_item + '</td>' +
+                            '<td>' + val.point_of_sale_price + '</td>' +
+                            '</tr>';
+                            
+                            $('#reportTable tbody').append(reportRow);
+                        });
+                },
+                    error : function(e) {
+                        alert("ERROR: ", e);
+                        console.log("ERROR: ", e);
+                    }
+                });
+            })
+    </script>
+
+    <script>
+        // GENERATE SALES REPORT
+        $(document).ready(function(){	
+            $("#cmd").click(function(){
+                html2canvas(document.getElementById("pdf"), {
+                    onrendered: function(canvas) {
+                        var imgData = canvas.toDataURL('image/png');
+                        console.log('Report Image URL: '+imgData);
+                        var doc = new jsPDF('p', 'mm', [279.4, 215.9]);
+                        doc.addImage(imgData, 'PNG', 10, 10);
+                        doc.save('sales.pdf');
+                    }
+                });
+            });
+        })
+
+    </script>
+    <script>
+        // PRINTS REPORT WITH CURRENT TIME AND DATE
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    </script>
+</body>
+</html>
+
